@@ -5,7 +5,7 @@ import { FIRSTRUN, listData } from "./components/list";
 const data = listData;
 
 type listPropsType = {
-  f: (value: any) => void;
+  f: (value: any) => number | string;
   id: string;
   name: string;
   link: string;
@@ -15,7 +15,7 @@ type listPropsType = {
 
 function App() {
   const [value, setValue] = useState<
-    string | number | string[] | number[] | null
+    listPropsType['initial'] | null
   >(null);
   const [text, setText] = useState<string | null>(null);
   const [link, setLink] = useState<string | null>(null);
@@ -79,7 +79,8 @@ function App() {
 
   useEffect(() => {
     if (data) {
-      setStates(data[FIRSTRUN]);
+      const firstElement = data.find(el => el.id === FIRSTRUN.toString())
+      if (firstElement) setStates(firstElement);
     }
   }, []);
 

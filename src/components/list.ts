@@ -5,7 +5,7 @@ import {
 } from "./longest-common-prefix";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 0;
+export const FIRSTRUN = 13;
 
 export const listData = [
   {
