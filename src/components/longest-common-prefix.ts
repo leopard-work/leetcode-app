@@ -1,5 +1,6 @@
 export function longestCommonPrefix(strs: string[]): string {
-  return "ok";
+  console.log(strs)
+  return 'ok'
 }
 
 export const longestCommonPrefixInitial = ["flower", "flow", "flight"];

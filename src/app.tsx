@@ -20,7 +20,7 @@ function App() {
   const [link, setLink] = useState<string | null>(null);
   const [func, setFunc] = useState<any>(null);
   const [result, setResult] = useState(null);
-  const [activeItem, setActiveItem] = useState([]);
+  const [activeLink, setActiveLink] = useState<Record<string, string>>({})
 
   const valueRef = useRef<HTMLTextAreaElement>(null);
 
@@ -32,12 +32,13 @@ function App() {
   };
 
   const setStates = (props: listPropsType) => {
-    const { initial, link, f } = props;
+    const { initial, link, f, id } = props;
     setText(f.toString());
     setFunc(() => f);
     setValue(initial);
     setLink(link);
     valueRef.current!.value = initial.toString();
+    setActiveLink({[id]: 'list__link_active'})
   };
 
   const listTpl = (props: listPropsType) => {
@@ -49,14 +50,15 @@ function App() {
       event.preventDefault();
       event.stopPropagation();
       setStates(props);
-      (event.target as HTMLDivElement).classList.add("list__link_active");
     };
+
+    console.log(activeLink)
 
     return (
       <li className="list__block" key={id}>
         <a
           href="/"
-          className="list__link"
+          className={`list__link ${activeLink[id]}`}
           onClick={(event) => handleLinkClick(event)}
         >
           {name}

@@ -4,7 +4,7 @@ import {
   longestCommonPrefixInitial,
 } from "./longest-common-prefix";
 
-const ULR = "https://leetcode.com/problems/";
+const URL = "https://leetcode.com/problems/";
 export const FIRSTRUN = 0;
 
 export const listData = [
