@@ -1,5 +1,4 @@
 export function longestCommonPrefix(strs: string[]): string {
-  console.log(strs)
   return 'ok'
 }
 

@@ -10,6 +10,7 @@ type listPropsType = {
   name: string;
   link: string;
   initial: string | number | string[] | number[];
+  initialType?: string
 };
 
 function App() {
@@ -21,24 +22,29 @@ function App() {
   const [func, setFunc] = useState<any>(null);
   const [result, setResult] = useState(null);
   const [activeLink, setActiveLink] = useState<Record<string, string>>({})
+  const [type, setType] = useState<string | null>(null);
 
   const valueRef = useRef<HTMLTextAreaElement>(null);
 
   const hundleFormSubmit = (event: FormEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    if (valueRef.current && valueRef.current.value)
-      setValue(valueRef.current.value);
+    if (valueRef.current && valueRef.current.value) {
+      let finalValue: string | string[] = valueRef.current.value;
+      if (type && type === 'array') finalValue = finalValue.split(',');
+      setValue(finalValue);
+    }
   };
 
   const setStates = (props: listPropsType) => {
-    const { initial, link, f, id } = props;
+    const { initial, link, f, id, initialType } = props;
     setText(f.toString());
     setFunc(() => f);
     setValue(initial);
     setLink(link);
     valueRef.current!.value = initial.toString();
     setActiveLink({[id]: 'list__link_active'})
+    initialType ? setType(initialType) : setType(null)
   };
 
   const listTpl = (props: listPropsType) => {
@@ -51,8 +57,6 @@ function App() {
       event.stopPropagation();
       setStates(props);
     };
-
-    console.log(activeLink)
 
     return (
       <li className="list__block" key={id}>

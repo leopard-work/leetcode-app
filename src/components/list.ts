@@ -21,5 +21,6 @@ export const listData = [
     name: "14. Longest Common Prefix",
     link: `${URL}longest-common-prefix/`,
     initial: longestCommonPrefixInitial,
+    initialType: 'array'
   },
 ];
