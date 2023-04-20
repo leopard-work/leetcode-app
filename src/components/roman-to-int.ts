@@ -1,4 +1,4 @@
-function romanToInt(s: string): number {
+export function romanToInt(s: string): number {
   const initial: Record<string, number> = {
     I: 1,
     V: 5,
@@ -20,4 +20,4 @@ function romanToInt(s: string): number {
   return result;
 }
 
-export default romanToInt;
+export const romanToIntInitial = "MCMXCIV";
