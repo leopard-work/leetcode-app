@@ -9,15 +9,18 @@ type listPropsType = {
   id: string;
   name: string;
   link: string;
-  initial: string | number;
+  initial: string | number | string[] | number[];
 };
 
 function App() {
-  const [value, setValue] = useState<string | number | null>(null);
+  const [value, setValue] = useState<
+    string | number | string[] | number[] | null
+  >(null);
   const [text, setText] = useState<string | null>(null);
   const [link, setLink] = useState<string | null>(null);
   const [func, setFunc] = useState<any>(null);
   const [result, setResult] = useState(null);
+  const [activeItem, setActiveItem] = useState([]);
 
   const valueRef = useRef<HTMLTextAreaElement>(null);
 
@@ -46,13 +49,14 @@ function App() {
       event.preventDefault();
       event.stopPropagation();
       setStates(props);
+      (event.target as HTMLDivElement).classList.add("list__link_active");
     };
 
     return (
       <li className="list__block" key={id}>
         <a
           href="/"
-          className="list__link list__link_active"
+          className="list__link"
           onClick={(event) => handleLinkClick(event)}
         >
           {name}
