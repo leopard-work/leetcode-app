@@ -7,7 +7,8 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 const data = listData;
 
 type listPropsType = {
-  f: (value: any) => number | string;
+  f: (value: any) => number | string | number[];
+  f_view?: unknown;
   id: string;
   name: string;
   link: string;
@@ -37,8 +38,8 @@ function App() {
   };
 
   const setStates = (props: listPropsType) => {
-    const { initial, link, f, id, initialType } = props;
-    setText(f.toString());
+    const { initial, link, f, id, initialType, f_view } = props;
+    f_view ? setText(f_view.toString()) : setText(f.toString());
     setFunc(() => f);
     setValue(initial);
     setLink(link);
@@ -73,7 +74,9 @@ function App() {
 
   useEffect(() => {
     if (func) {
-      setResult(func(value));
+      let result = func(value);
+      if (typeof result === "object") result = `[${result.join(",")}]`;
+      setResult(result);
     }
   }, [func, value]);
 
