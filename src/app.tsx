@@ -3,11 +3,12 @@ import "./app.scss";
 import { FIRSTRUN, listData } from "./components/list";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import ListNode from "./utils/list-node";
 
 const data = listData;
 
 type listPropsType = {
-  f: (value: any) => number | string | number[] | boolean;
+  f: (value: any) => number | string | number[] | boolean | null | ListNode;
   f_view?: unknown;
   id: string;
   name: string;
@@ -79,7 +80,8 @@ function App() {
   useEffect(() => {
     if (func) {
       let result = func(value);
-      if (typeof result === "object") result = `[${result.join(",")}]`;
+      if (typeof result === "object")
+        result = result ? `[${result.join(",")}]` : "null";
       if (typeof result === "boolean")
         result ? (result = "true") : (result = "false");
       setResult(result);

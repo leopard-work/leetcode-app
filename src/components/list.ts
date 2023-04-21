@@ -6,9 +6,14 @@ import {
 import { twoSum, twoSumInitial, twoSumParse } from "./two-sum";
 import { isPalindrome, isPalindromeInitial } from "./is-palindrome";
 import { isValid, isValidInitial } from "./valid-parentheses";
+import {
+  mergeTwoLists,
+  mergeTwoListsInitial,
+  mergeTwoListsParse,
+} from "./merge-two-sorted-lists";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 20;
+export const FIRSTRUN = 21;
 
 export const listData = [
   {
@@ -48,5 +53,13 @@ export const listData = [
     name: "20. Valid Parentheses",
     link: `${URL}valid-parentheses/`,
     initial: isValidInitial,
+  },
+  {
+    f: mergeTwoListsParse,
+    f_view: mergeTwoLists,
+    id: "21",
+    name: "21. Merge Two Sorted Lists",
+    link: `${URL}merge-two-sorted-lists/`,
+    initial: mergeTwoListsInitial,
   },
 ];
