@@ -1,8 +1,8 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import "./app.scss";
-import "./atom-one-dark.scss";
 import { FIRSTRUN, listData } from "./components/list";
-import Highlight from "react-highlight";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const data = listData;
 
@@ -102,7 +102,9 @@ function App() {
                 </a>
               </div>
               <div className="content__code">
-                <Highlight>{text}</Highlight>
+                <SyntaxHighlighter language="javascript" style={a11yDark}>
+                  {text as string}
+                </SyntaxHighlighter>
               </div>
               <div className="run">
                 <form
