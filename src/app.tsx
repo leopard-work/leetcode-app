@@ -1,6 +1,8 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import "./app.scss";
+import "./atom-one-dark.scss";
 import { FIRSTRUN, listData } from "./components/list";
+import Highlight from "react-highlight";
 
 const data = listData;
 
@@ -10,18 +12,16 @@ type listPropsType = {
   name: string;
   link: string;
   initial: string | number | string[] | number[];
-  initialType?: string
+  initialType?: string;
 };
 
 function App() {
-  const [value, setValue] = useState<
-    listPropsType['initial'] | null
-  >(null);
+  const [value, setValue] = useState<listPropsType["initial"] | null>(null);
   const [text, setText] = useState<string | null>(null);
   const [link, setLink] = useState<string | null>(null);
   const [func, setFunc] = useState<any>(null);
   const [result, setResult] = useState(null);
-  const [activeLink, setActiveLink] = useState<Record<string, string>>({})
+  const [activeLink, setActiveLink] = useState<Record<string, string>>({});
   const [type, setType] = useState<string | null>(null);
 
   const valueRef = useRef<HTMLTextAreaElement>(null);
@@ -31,7 +31,7 @@ function App() {
     event.stopPropagation();
     if (valueRef.current && valueRef.current.value) {
       let finalValue: string | string[] = valueRef.current.value;
-      if (type && type === 'array') finalValue = finalValue.split(',');
+      if (type && type === "array") finalValue = finalValue.split(",");
       setValue(finalValue);
     }
   };
@@ -43,8 +43,8 @@ function App() {
     setValue(initial);
     setLink(link);
     valueRef.current!.value = initial.toString();
-    setActiveLink({[id]: 'list__link_active'})
-    initialType ? setType(initialType) : setType(null)
+    setActiveLink({ [id]: "list__link_active" });
+    initialType ? setType(initialType) : setType(null);
   };
 
   const listTpl = (props: listPropsType) => {
@@ -79,7 +79,7 @@ function App() {
 
   useEffect(() => {
     if (data) {
-      const firstElement = data.find(el => el.id === FIRSTRUN.toString())
+      const firstElement = data.find((el) => el.id === FIRSTRUN.toString());
       if (firstElement) setStates(firstElement);
     }
   }, []);
@@ -102,7 +102,7 @@ function App() {
                 </a>
               </div>
               <div className="content__code">
-                <pre>{text}</pre>
+                <Highlight>{text}</Highlight>
               </div>
               <div className="run">
                 <form
