@@ -7,8 +7,10 @@ import ListNode from "./utils/list-node";
 
 const data = listData;
 
+type fType = number | string | number[] | boolean | null | ListNode;
+
 type listPropsType = {
-  f: (value: any) => number | string | number[] | boolean | null | ListNode;
+  f: (value: any) => fType;
   f_view?: unknown;
   id: string;
   name: string;
@@ -21,8 +23,8 @@ function App() {
   const [value, setValue] = useState<listPropsType["initial"] | null>(null);
   const [text, setText] = useState<string | null>(null);
   const [link, setLink] = useState<string | null>(null);
-  const [func, setFunc] = useState<any>(null);
-  const [result, setResult] = useState(null);
+  const [func, setFunc] = useState<listPropsType["f"] | null>(null);
+  const [result, setResult] = useState<fType>(null);
   const [activeLink, setActiveLink] = useState<Record<string, string>>({});
   const [type, setType] = useState<string | null>(null);
 
@@ -80,7 +82,7 @@ function App() {
   useEffect(() => {
     if (func) {
       let result = func(value);
-      if (typeof result === "object")
+      if (typeof result === "object" && !(result instanceof ListNode))
         result = result ? `[${result.join(",")}]` : "null";
       if (typeof result === "boolean")
         result ? (result = "true") : (result = "false");
@@ -132,7 +134,7 @@ function App() {
                   </button>
                 </form>
                 <div className="run__result">
-                  Result: <span>{result}</span>
+                  Result: <span>{result as string}</span>
                 </div>
               </div>
             </div>
