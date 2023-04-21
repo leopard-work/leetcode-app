@@ -4,9 +4,10 @@ import {
   longestCommonPrefixInitial,
 } from "./longest-common-prefix";
 import { twoSum, twoSumInitial, twoSumParse } from "./two-sum";
+import { isPalindrome, isPalindromeInitial } from "./is-palindrome";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 1;
+export const FIRSTRUN = 9;
 
 export const listData = [
   {
@@ -16,6 +17,14 @@ export const listData = [
     name: "1. Two Sum",
     link: `${URL}two-sum/`,
     initial: twoSumInitial,
+  },
+  {
+    f: isPalindrome,
+    id: "9",
+    name: "9. Palindrome Number",
+    link: `${URL}palindrome-number/`,
+    initial: isPalindromeInitial,
+    initialType: "number",
   },
   {
     f: romanToInt,

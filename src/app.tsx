@@ -7,7 +7,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 const data = listData;
 
 type listPropsType = {
-  f: (value: any) => number | string | number[];
+  f: (value: any) => number | string | number[] | boolean;
   f_view?: unknown;
   id: string;
   name: string;
@@ -31,8 +31,12 @@ function App() {
     event.preventDefault();
     event.stopPropagation();
     if (valueRef.current && valueRef.current.value) {
-      let finalValue: string | string[] = valueRef.current.value;
-      if (type && type === "array") finalValue = finalValue.split(",");
+      let finalValue: string | string[] | number | number[] =
+        valueRef.current.value;
+      if (type) {
+        if (type === "array") finalValue = finalValue.split(",");
+        if (type === "number") finalValue = +finalValue;
+      }
       setValue(finalValue);
     }
   };
@@ -76,6 +80,8 @@ function App() {
     if (func) {
       let result = func(value);
       if (typeof result === "object") result = `[${result.join(",")}]`;
+      if (typeof result === "boolean")
+        result ? (result = "true") : (result = "false");
       setResult(result);
     }
   }, [func, value]);
