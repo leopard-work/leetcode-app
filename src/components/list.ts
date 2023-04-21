@@ -5,9 +5,10 @@ import {
 } from "./longest-common-prefix";
 import { twoSum, twoSumInitial, twoSumParse } from "./two-sum";
 import { isPalindrome, isPalindromeInitial } from "./is-palindrome";
+import { isValid, isValidInitial } from "./valid-parentheses";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 9;
+export const FIRSTRUN = 20;
 
 export const listData = [
   {
@@ -40,5 +41,12 @@ export const listData = [
     link: `${URL}longest-common-prefix/`,
     initial: longestCommonPrefixInitial,
     initialType: "array",
+  },
+  {
+    f: isValid,
+    id: "20",
+    name: "20. Valid Parentheses",
+    link: `${URL}valid-parentheses/`,
+    initial: isValidInitial,
   },
 ];
