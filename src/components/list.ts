@@ -10,7 +10,7 @@ import {
   mergeTwoLists,
   mergeTwoListsInitial,
   mergeTwoListsParse,
-} from "./merge-two-sorted-lists";
+} from "./21_merge-two-sorted-lists";
 
 const URL = "https://leetcode.com/problems/";
 export const FIRSTRUN = 21;
@@ -23,6 +23,7 @@ export const listData = [
     name: "1. Two Sum",
     link: `${URL}two-sum/`,
     initial: twoSumInitial,
+    initialType: "ListNode",
   },
   {
     f: isPalindrome,

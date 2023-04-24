@@ -82,6 +82,14 @@ function App() {
   useEffect(() => {
     if (func) {
       let result = func(value);
+      if (result instanceof ListNode) {
+        let tmp = result;
+        result = [];
+        while (tmp) {
+          result.push(tmp.val);
+          tmp = tmp.next;
+        }
+      }
       if (typeof result === "object" && !(result instanceof ListNode))
         result = result ? `[${result.join(",")}]` : "null";
       if (typeof result === "boolean")
