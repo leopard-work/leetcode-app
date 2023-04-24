@@ -38,7 +38,8 @@ function App() {
         valueRef.current.value;
       if (type) {
         if (type === "array") finalValue = finalValue.split(",");
-        if (type === "number") finalValue = +finalValue;
+        else if (type === "arrayNumber") finalValue = finalValue.split(",");
+        else if (type === "number") finalValue = +finalValue;
       }
       setValue(finalValue);
     }

@@ -73,6 +73,6 @@ export const listData = [
     name: "26. Remove Duplicates from Sorted Array",
     link: `${URL}remove-duplicates-from-sorted-array/`,
     initial: removeDuplicatesInitial,
-    initialType: "array",
+    initialType: "arrayNumber",
   },
 ];
