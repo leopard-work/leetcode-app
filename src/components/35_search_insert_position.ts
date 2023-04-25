@@ -5,7 +5,12 @@ export const searchInsertParse = (s) => {
 };
 
 export function searchInsert(nums: number[], target: number): number {
-  return 0;
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) return i;
+    if (target > nums[i]) count++;
+  }
+  return count;
 }
 
 export const searchInsertInitial = "1,3,5,6;5";

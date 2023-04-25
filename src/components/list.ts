@@ -3,11 +3,15 @@ import {
   isPalindromeInitial,
   isValid,
   isValidInitial,
+  lengthOfLastWord,
+  lengthOfLastWordInitial,
   longestCommonPrefix,
   longestCommonPrefixInitial,
   mergeTwoLists,
   mergeTwoListsInitial,
   mergeTwoListsParse,
+  plusOne,
+  plusOneInitial,
   removeDuplicates,
   removeDuplicatesInitial,
   removeElement,
@@ -27,7 +31,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 28;
+export const FIRSTRUN = 66;
 
 export const listData = [
   {
@@ -108,5 +112,20 @@ export const listData = [
     name: "35. Search Insert Position",
     link: `${URL}search-insert-position/`,
     initial: searchInsertInitial,
+  },
+  {
+    f: lengthOfLastWord,
+    id: "58",
+    name: "58. Length of Last Word",
+    link: `${URL}ength-of-last-word/`,
+    initial: lengthOfLastWordInitial,
+  },
+  {
+    f: plusOne,
+    id: "66",
+    name: "66. Plus One",
+    link: `${URL}plus-one/`,
+    initial: plusOneInitial,
+    initialType: "arrayNumber",
   },
 ];
