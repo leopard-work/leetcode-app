@@ -1,28 +1,33 @@
-import { romanToInt, romanToIntInitial } from "./roman-to-int";
 import {
+  isPalindrome,
+  isPalindromeInitial,
+  isValid,
+  isValidInitial,
   longestCommonPrefix,
   longestCommonPrefixInitial,
-} from "./longest-common-prefix";
-import { twoSum, twoSumInitial, twoSumParse } from "./two-sum";
-import { isPalindrome, isPalindromeInitial } from "./is-palindrome";
-import { isValid, isValidInitial } from "./valid-parentheses";
-import {
   mergeTwoLists,
   mergeTwoListsInitial,
   mergeTwoListsParse,
-} from "./21_merge-two-sorted-lists";
-import {
   removeDuplicates,
   removeDuplicatesInitial,
-} from "./26_remove_duplicates_from_sorted_array";
-import {
   removeElement,
   removeElementInitial,
   removeElementParse,
-} from "./27_remove_element";
+  romanToInt,
+  romanToIntInitial,
+  searchInsert,
+  searchInsertInitial,
+  searchInsertParse,
+  strStr,
+  strStrInitial,
+  strStrParse,
+  twoSum,
+  twoSumInitial,
+  twoSumParse,
+} from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 27;
+export const FIRSTRUN = 28;
 
 export const listData = [
   {
@@ -87,5 +92,21 @@ export const listData = [
     name: "27. Remove Element",
     link: `${URL}remove-element/`,
     initial: removeElementInitial,
+  },
+  {
+    f: strStrParse,
+    f_view: strStr,
+    id: "28",
+    name: "28. Find the Index of the First Occurrence in a String",
+    link: `${URL}find-the-index-of-the-first-occurrence-in-a-string/`,
+    initial: strStrInitial,
+  },
+  {
+    f: searchInsertParse,
+    f_view: searchInsert,
+    id: "35",
+    name: "35. Search Insert Position",
+    link: `${URL}search-insert-position/`,
+    initial: searchInsertInitial,
   },
 ];
