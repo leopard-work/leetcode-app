@@ -15,9 +15,14 @@ import {
   removeDuplicates,
   removeDuplicatesInitial,
 } from "./26_remove_duplicates_from_sorted_array";
+import {
+  removeElement,
+  removeElementInitial,
+  removeElementParse,
+} from "./27_remove_element";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 26;
+export const FIRSTRUN = 27;
 
 export const listData = [
   {
@@ -74,5 +79,13 @@ export const listData = [
     link: `${URL}remove-duplicates-from-sorted-array/`,
     initial: removeDuplicatesInitial,
     initialType: "arrayNumber",
+  },
+  {
+    f: removeElementParse,
+    f_view: removeElement,
+    id: "27",
+    name: "27. Remove Element",
+    link: `${URL}remove-element/`,
+    initial: removeElementInitial,
   },
 ];
