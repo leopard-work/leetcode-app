@@ -1,4 +1,7 @@
 import {
+  addBinary,
+  addBinaryInitial,
+  addBinaryParse,
   isPalindrome,
   isPalindromeInitial,
   isValid,
@@ -31,7 +34,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 66;
+export const FIRSTRUN = 67;
 
 export const listData = [
   {
@@ -127,5 +130,13 @@ export const listData = [
     link: `${URL}plus-one/`,
     initial: plusOneInitial,
     initialType: "arrayNumber",
+  },
+  {
+    f: addBinaryParse,
+    f_view: addBinary,
+    id: "67",
+    name: "67. Add Binary",
+    link: `${URL}add-binary/`,
+    initial: addBinaryInitial,
   },
 ];
