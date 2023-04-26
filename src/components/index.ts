@@ -11,3 +11,4 @@ export * from "./35_search_insert_position";
 export * from "./58_length_of_last_word";
 export * from "./66_plus_one";
 export * from "./67_add_binary";
+export * from "./69_sqrt_x";

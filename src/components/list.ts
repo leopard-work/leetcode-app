@@ -13,6 +13,8 @@ import {
   mergeTwoLists,
   mergeTwoListsInitial,
   mergeTwoListsParse,
+  mySqrt,
+  mySqrtInitial,
   plusOne,
   plusOneInitial,
   removeDuplicates,
@@ -34,7 +36,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 67;
+export const FIRSTRUN = 69;
 
 export const listData = [
   {
@@ -138,5 +140,12 @@ export const listData = [
     name: "67. Add Binary",
     link: `${URL}add-binary/`,
     initial: addBinaryInitial,
+  },
+  {
+    f: mySqrt,
+    id: "69",
+    name: "69. Sqrt(x)",
+    link: `${URL}sqrtx/`,
+    initial: mySqrtInitial,
   },
 ];
