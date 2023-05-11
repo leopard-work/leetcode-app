@@ -4,6 +4,9 @@ import {
   addBinaryParse,
   climbStairs,
   climbStairsInitial,
+  deleteDuplicates,
+  deleteDuplicatesInitial,
+  deleteDuplicatesParse,
   isPalindrome,
   isPalindromeInitial,
   isValid,
@@ -38,7 +41,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 70;
+export const FIRSTRUN = 83;
 
 export const listData = [
   {
@@ -156,5 +159,13 @@ export const listData = [
     name: "70. Climbing Stairs",
     link: `${URL}climbing-stairs/`,
     initial: climbStairsInitial,
+  },
+  {
+    f: deleteDuplicatesParse,
+    f_view: deleteDuplicates,
+    id: "83",
+    name: "83. Remove Duplicates from Sorted List",
+    link: `${URL}remove-duplicates-from-sorted-list/`,
+    initial: deleteDuplicatesInitial,
   },
 ];
