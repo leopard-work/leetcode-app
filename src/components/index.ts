@@ -12,3 +12,4 @@ export * from "./58_length_of_last_word";
 export * from "./66_plus_one";
 export * from "./67_add_binary";
 export * from "./69_sqrt_x";
+export * from "./70_climbing_stairs";

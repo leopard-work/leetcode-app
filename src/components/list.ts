@@ -2,6 +2,8 @@ import {
   addBinary,
   addBinaryInitial,
   addBinaryParse,
+  climbStairs,
+  climbStairsInitial,
   isPalindrome,
   isPalindromeInitial,
   isValid,
@@ -36,7 +38,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 69;
+export const FIRSTRUN = 70;
 
 export const listData = [
   {
@@ -147,5 +149,12 @@ export const listData = [
     name: "69. Sqrt(x)",
     link: `${URL}sqrtx/`,
     initial: mySqrtInitial,
+  },
+  {
+    f: climbStairs,
+    id: "70",
+    name: "70. Climbing Stairs",
+    link: `${URL}climbing-stairs/`,
+    initial: climbStairsInitial,
   },
 ];
