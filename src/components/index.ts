@@ -14,3 +14,4 @@ export * from "./67_add_binary";
 export * from "./69_sqrt_x";
 export * from "./70_climbing_stairs";
 export * from "./83_remove_duplicates_from_sorted_list";
+export * from "./88_merge_sorted_array";

@@ -15,6 +15,9 @@ import {
   lengthOfLastWordInitial,
   longestCommonPrefix,
   longestCommonPrefixInitial,
+  merge,
+  mergeInitial,
+  mergeParse,
   mergeTwoLists,
   mergeTwoListsInitial,
   mergeTwoListsParse,
@@ -41,7 +44,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 83;
+export const FIRSTRUN = 88;
 
 export const listData = [
   {
@@ -167,5 +170,13 @@ export const listData = [
     name: "83. Remove Duplicates from Sorted List",
     link: `${URL}remove-duplicates-from-sorted-list/`,
     initial: deleteDuplicatesInitial,
+  },
+  {
+    f: mergeParse,
+    f_view: merge,
+    id: "88",
+    name: "88. Merge Sorted Array",
+    link: `${URL}merge-sorted-array/`,
+    initial: mergeInitial,
   },
 ];
