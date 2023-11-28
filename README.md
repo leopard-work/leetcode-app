@@ -1,4 +1,4 @@
-# 🚥 Leetcode problem solving with test checking function 🚥
+# Leetcode problem solving with test checking function
 
 ### The application demonstrates solutions to some problems from leetcode.com and allows you to run tests on them.
 

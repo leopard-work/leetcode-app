@@ -44,7 +44,7 @@ import {
 } from "./index";
 
 const URL = "https://leetcode.com/problems/";
-export const FIRSTRUN = 88;
+export const FIRSTRUN = 1;
 
 export const listData = [
   {
