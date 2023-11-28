@@ -6,7 +6,7 @@
 
 ## Live demo
 
-[https://leetcode.solutions4web.ru/](https://leetcode.solutions4web.ru)
+[https://leetcode-app.solutions4web.ru/](https://leetcode-app.solutions4web.ru)
 
 ## Main Libraries
 
